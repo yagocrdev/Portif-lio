@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:app && npm run git:sync",
+    "build": "npm run build:app",
     "build:app": "tsc -b && vite build",
     "git:sync": "git add . && git commit -m \"updatex.x\" && git push origin main",
     "lint": "eslint .",
