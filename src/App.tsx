@@ -26,6 +26,8 @@ const attributes = [
   { name: 'Trabalho em Equipe', points: 89 },
   { name: 'Resolução de Problemas', points: 91 },
   { name: 'Adaptabilidade', points: 86 },
+  { name: 'Proatividade', points: 92 },
+  { name: 'Disciplina', points: 92 },
 ]
 
 const skills = [
