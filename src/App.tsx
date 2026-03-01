@@ -1,10 +1,11 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 
 const coreStats = [
-  { label: 'Nivel', value: '00' },
-  { label: 'Classe Atual', value: 'Desenvolvedor Junior em Formacao' },
+  { label: 'Nível', value: '00' },
+  { label: 'Classe Atual', value: 'Desenvolvedor Júnior em Formação' },
   { label: 'Foco', value: 'Frontend com base em backend' },
-  { label: 'Disponibilidade', value: 'Estagio / Freela' },
+  { label: 'Disponibilidade', value: 'Estágio / Freela' },
 ]
 
 const experienceBars = [
@@ -16,63 +17,58 @@ const experienceBars = [
 ]
 
 const playerStory = [
-  'Sou estudante de Analise e Desenvolvimento de Sistemas e estou em transicao de carreira, atualmente no meu novo arco profissional.',
-  'Minha jornada comecou bem antes da tecnologia: em 2013, em Cachoeirinha/RS, iniciei no mundo comercial como estoquista de expedicao. Depois, assumi outro papel importante na minha historia: professor de muay thai. Desde os 9 anos em cima de um tatame, aprendi sobre disciplina, constancia e evolucao diaria, valores que hoje carrego para o desenvolvimento de software.',
-  'Foi dando aulas que comecei a explorar novas habilidades: edicao de imagens, criacao de chamadas para atrair alunos e um contato mais proximo com ferramentas digitais. A tecnologia sempre esteve presente como pano de fundo, nos jogos, nos computadores e na admiracao pelos amigos desenvolvedores. Sempre achei fascinante como algumas linhas de codigo podiam criar mundos inteiros, sistemas complexos e solucoes incriveis.',
-  'Apos a pandemia, com a oscilacao de alunos, precisei encerrar o ciclo nas artes marciais. Meu caminho seguiu para a industria metalurgica, onde atuo atualmente na Dana Incorporated. Nesse periodo, enfrentei desafios pessoais intensos, incluindo as enchentes que impactaram o Rio Grande do Sul. Foram verdadeiras batalhas de chefe da vida real, momentos que exigiram resiliencia, adaptacao e forca mental.',
-  'Em 2025, decidi iniciar a faculdade de Analise e Desenvolvimento de Sistemas para mudar o rumo da minha historia. Na programacao, encontrei algo que me lembra o inicio nas artes marciais: o frio na barriga de aprender algo novo, o esforco constante, o erro que ensina, o ajuste fino ate o codigo rodar perfeitamente. Cada projeto e como uma nova quest. Cada problema resolvido e XP acumulada. Cada tecnologia aprendida e uma nova skill desbloqueada.',
-  'Acredito que evoluir como desenvolvedor e um processo continuo: entender a logica por tras das coisas, fortalecer a base e subir de nivel projeto apos projeto. Atualmente desenvolvo projetos proprios para consolidar meu aprendizado e aprimorar minhas habilidades tecnicas, sempre buscando aplicar na pratica o que estudo.',
-  'Agora estou em busca da minha primeira oportunidade na area de tecnologia, meu proximo grande desafio. Quero contribuir com dedicacao, responsabilidade, proatividade e, principalmente, com uma mentalidade de evolucao constante. Sei que nenhuma jornada e solo: grandes conquistas sao feitas em equipe. E estou pronto para entrar na party, aprender com os mais experientes e somar minhas habilidades nessa nova fase da minha carreira.',
+  'Meu nome é Yago Correa Rodrigues. Sou aluno de (ADS) Análise e Desenvolvimento de Sistemas; ingressei no curso em 2025 em busca de uma graduação e de uma carreira para me aprimorar pessoal e profissionalmente. Atualmente trabalho na área da indústria metalmecânica e ministro aulas de Muay Thai nas minhas horas vagas. Encontrei na Análise e Desenvolvimento de Sistemas algo parecido com o que sinto quando subo no ringue e encaro meu oponente nos primeiros segundos do round: é preciso pensamento rápido e uma boa capacidade de adaptabilidade, pois nem sempre o oponente/desafio é o que era esperado. Isso é o que me instiga a me superar e a dar o meu melhor. Atualmente sigo desenvolvendo projetos próprios ou sob demanda, ainda bem pequenos, como o que desenvolvi a pedido de amigos: o Search MTG. MTG é sigla para Magic: The Gathering, um jogo de cartas muito famoso no mundo nerd/geek que tenho como hobby. O pedido foi um app simples que rastreasse a cotação em tempo real dos preços de cada carta, já que o mercado de Magic muda a cada nova atualização nas regras e o valor das cartas é volátil. Assim, desenvolvi o Search MTG para que o usuário obtenha a melhor oferta quando ela surgir e para que também possa vender suas cartas pelo melhor preço quando lhe for conveniente. Ainda pretendo desenvolvê-lo mais no futuro, mas, para um projeto embrionário feito para amigos, ele já é muito útil.',
+  'No momento, estou em busca de uma oportunidade no mercado profissional para me aperfeiçoar e também contribuir. Sou um estudante aplicado; o que me falta em experiência tenho de sobra em empenho, dedicação e disposição. Estou disponível para uma vaga de estágio para quem quiser me oferecer uma chance no mercado.',
 ]
 
 const attributes = [
-  { name: 'Comunicacao', points: 87 },
+  { name: 'Comunicação', points: 87 },
   { name: 'Trabalho em Equipe', points: 89 },
-  { name: 'Resolucao de Problemas', points: 91 },
+  { name: 'Resolução de Problemas', points: 91 },
   { name: 'Adaptabilidade', points: 86 },
 ]
 
 const skills = [
   {
-    title: 'Componentizacao React',
+    title: 'Componentização React',
     tier: 'Ramo Base',
     description:
-      'Estruturas reutilizaveis, props tipadas e padrao visual consistente para escalar interfaces.',
+      'Estruturas reutilizáveis, props tipadas e padrão visual consistente para escalar interfaces.',
   },
   {
     title: 'Type Safety e Estado',
-    tier: 'Ramo Intermediario',
+    tier: 'Ramo Intermediário',
     description:
-      'Modelagem de tipos, fluxo de estados e organizacao de logica para reduzir erros em producao.',
+      'Modelagem de tipos, fluxo de estados e organização de lógica para reduzir erros em produção.',
   },
   {
-    title: 'Integracao Front + Backend',
-    tier: 'Ramo Em Evolucao',
+    title: 'Integração Front + Backend',
+    tier: 'Ramo Em Evolução',
     description:
-      'Consumo de APIs, tratamento de falhas e padronizacao de dados para entregas mais robustas.',
+      'Consumo de APIs, tratamento de falhas e padronização de dados para entregas mais robustas.',
   },
 ]
 
 const objectives = [
   {
     title: 'Objetivo 01 - Consolidar React + TypeScript',
-    impact: 'Projetos completos com padrao profissional',
+    impact: 'Projetos completos com padrão profissional',
     summary:
-      'Finalizar interfaces com estados reais, validacao de formularios e componentes reutilizaveis.',
+      'Finalizar interfaces com estados reais, validação de formulários e componentes reutilizáveis.',
     reward: 'XP de arquitetura frontend',
   },
   {
     title: 'Objetivo 02 - Evoluir no Backend TypeScript',
-    impact: 'Ampliar visao fullstack',
+    impact: 'Ampliar visão fullstack',
     summary:
-      'Construir APIs basicas, autenticacao inicial e integracao limpa com o frontend.',
-    reward: 'XP de integracao e regra de negocio',
+      'Construir APIs básicas, autenticação inicial e integração limpa com o frontend.',
+    reward: 'XP de integração e regra de negócio',
   },
   {
     title: 'Objetivo 03 - Fortalecer base em C#',
     impact: 'Abrir caminho para stacks corporativas',
     summary:
-      'Praticar fundamentos de orientacao a objetos e pequenas APIs para consolidar logica.',
+      'Praticar fundamentos de orientação a objetos e pequenas APIs para consolidar lógica.',
     reward: 'XP de backend e carreira',
   },
 ]
@@ -83,14 +79,36 @@ const inventory = [
   'CSS Vanilla',
   'Node.js',
   'C#',
-  '.NET Basico',
+  '.NET Básico',
   'Vite',
   'Git',
   'GitHub',
   'Figma',
 ]
 
+type Theme = 'dark' | 'light'
+
+const themeStorageKey = 'portfolio-theme'
+
 function App() {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') {
+      return 'dark'
+    }
+
+    const savedTheme = window.localStorage.getItem(themeStorageKey)
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      return savedTheme
+    }
+
+    return 'dark'
+  })
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    window.localStorage.setItem(themeStorageKey, theme)
+  }, [theme])
+
   return (
     <div className="sheet-wrap" id="topo">
       <header className="sheet-header">
@@ -98,16 +116,27 @@ function App() {
           <p className="kicker">Dev Character Sheet</p>
           <h1>Yago Correa Rodrigues</h1>
           <p className="subtitle">
-            Portfolio em formato RPG com progresso tecnico, habilidades e
-            objetivos de evolucao como desenvolvedor.
+            Portfólio em formato RPG com progresso técnico, habilidades e
+            objetivos de evolução como desenvolvedor.
           </p>
         </div>
-        <nav className="sheet-nav" aria-label="Navegacao principal">
-          <a href="#jogador">Jogador</a>
-          <a href="#skills">Habilidades</a>
-          <a href="#atributos">Atributos</a>
-          <a href="#objetivos">Objetivos</a>
-        </nav>
+        <div className="header-controls">
+          <nav className="sheet-nav" aria-label="Navegação principal">
+            <a href="#jogador">Jogador</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#atributos">Atributos</a>
+            <a href="#objetivos">Objetivos</a>
+          </nav>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            aria-label="Alternar tema claro e escuro"
+            aria-pressed={theme === 'light'}
+          >
+            Tema {theme === 'dark' ? 'Escuro' : 'Claro'}
+          </button>
+        </div>
       </header>
 
       <main className="sheet-grid">
@@ -120,7 +149,7 @@ function App() {
             <span>YC</span>
           </div>
           <p className="role">Classe Atual</p>
-          <h2>Desenvolvedor Junior em Formacao</h2>
+          <h2>Desenvolvedor Júnior em Formação</h2>
           <div className="origin-story">
             {playerStory.map((paragraph) => (
               <p key={paragraph} className="origin">
@@ -138,8 +167,8 @@ function App() {
             ))}
           </ul>
 
-          <div className="xp-block" aria-label="Barras de experiencia tecnica">
-            <p className="xp-title">Barras de Experiencia</p>
+          <div className="xp-block" aria-label="Barras de experiência técnica">
+            <p className="xp-title">Barras de Experiência</p>
             <ul className="xp-list">
               {experienceBars.map((experience) => (
                 <li key={experience.name}>
@@ -159,7 +188,7 @@ function App() {
         <section
           className="panel panel-attrs"
           id="atributos"
-          aria-label="Atributos soft skills"
+          aria-label="Atributos e soft skills"
         >
           <div className="panel-title-row">
             <p className="panel-id">Atributos</p>
@@ -224,10 +253,10 @@ function App() {
           </div>
         </section>
 
-        <section className="panel panel-inventory" aria-label="Inventario tecnico">
+        <section className="panel panel-inventory" aria-label="Inventário técnico">
           <div className="panel-title-row">
             <p className="panel-id">Loadout</p>
-            <h3>Inventario Tecnico</h3>
+            <h3>Inventário Técnico</h3>
           </div>
           <ul className="chip-list">
             {inventory.map((item) => (
@@ -239,15 +268,15 @@ function App() {
         <section className="panel panel-guild" id="guilda">
           <div className="panel-title-row">
             <p className="panel-id">Contato</p>
-            <h3>Canal de Convocacao</h3>
+            <h3>Canal de Convocação</h3>
           </div>
           <p>
-            Aberto para estagio, projetos freelance e oportunidades para
+            Aberto para estágio, projetos freelance e oportunidades para
             evoluir com desafios reais de produto.
           </p>
           <div className="actions">
             <a className="btn btn-primary" href="mailto:seuemail@dominio.com">
-              Convocar por Email
+              Convocar por E-mail
             </a>
             <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
               LinkedIn
@@ -260,7 +289,7 @@ function App() {
       </main>
 
       <footer className="sheet-footer">
-        <span>Build: Portfolio v2.0 - Character Sheet Theme</span>
+        <span>Build: Portfólio v2.0 - Character Sheet Theme</span>
         <a href="#topo">Voltar ao topo</a>
       </footer>
     </div>
