@@ -1,75 +1,93 @@
 import './App.css'
 
 const coreStats = [
-  { label: 'Nivel', value: '23' },
-  { label: 'Classe', value: 'Frontend Developer' },
-  { label: 'Especialidade', value: 'React + TypeScript' },
-  { label: 'Disponibilidade', value: 'Freela / Contrato' },
+  { label: 'Nivel', value: '00' },
+  { label: 'Classe Atual', value: 'Desenvolvedor Junior em Formacao' },
+  { label: 'Foco', value: 'Frontend com base em backend' },
+  { label: 'Disponibilidade', value: 'Estagio / Freela' },
+]
+
+const experienceBars = [
+  { name: 'React', points: 0, level: 0 },
+  { name: 'TypeScript', points: 0, level: 0 },
+  { name: 'CSS Vanilla', points: 0, level: 0 },
+  { name: 'Backend TypeScript', points: 0, level: 0 },
+  { name: 'C#', points: 0, level: 0 },
+]
+
+const playerStory = [
+  'Sou estudante de Analise e Desenvolvimento de Sistemas e estou em transicao de carreira, atualmente no meu novo arco profissional.',
+  'Minha jornada comecou bem antes da tecnologia: em 2013, em Cachoeirinha/RS, iniciei no mundo comercial como estoquista de expedicao. Depois, assumi outro papel importante na minha historia: professor de muay thai. Desde os 9 anos em cima de um tatame, aprendi sobre disciplina, constancia e evolucao diaria, valores que hoje carrego para o desenvolvimento de software.',
+  'Foi dando aulas que comecei a explorar novas habilidades: edicao de imagens, criacao de chamadas para atrair alunos e um contato mais proximo com ferramentas digitais. A tecnologia sempre esteve presente como pano de fundo, nos jogos, nos computadores e na admiracao pelos amigos desenvolvedores. Sempre achei fascinante como algumas linhas de codigo podiam criar mundos inteiros, sistemas complexos e solucoes incriveis.',
+  'Apos a pandemia, com a oscilacao de alunos, precisei encerrar o ciclo nas artes marciais. Meu caminho seguiu para a industria metalurgica, onde atuo atualmente na Dana Incorporated. Nesse periodo, enfrentei desafios pessoais intensos, incluindo as enchentes que impactaram o Rio Grande do Sul. Foram verdadeiras batalhas de chefe da vida real, momentos que exigiram resiliencia, adaptacao e forca mental.',
+  'Em 2025, decidi iniciar a faculdade de Analise e Desenvolvimento de Sistemas para mudar o rumo da minha historia. Na programacao, encontrei algo que me lembra o inicio nas artes marciais: o frio na barriga de aprender algo novo, o esforco constante, o erro que ensina, o ajuste fino ate o codigo rodar perfeitamente. Cada projeto e como uma nova quest. Cada problema resolvido e XP acumulada. Cada tecnologia aprendida e uma nova skill desbloqueada.',
+  'Acredito que evoluir como desenvolvedor e um processo continuo: entender a logica por tras das coisas, fortalecer a base e subir de nivel projeto apos projeto. Atualmente desenvolvo projetos proprios para consolidar meu aprendizado e aprimorar minhas habilidades tecnicas, sempre buscando aplicar na pratica o que estudo.',
+  'Agora estou em busca da minha primeira oportunidade na area de tecnologia, meu proximo grande desafio. Quero contribuir com dedicacao, responsabilidade, proatividade e, principalmente, com uma mentalidade de evolucao constante. Sei que nenhuma jornada e solo: grandes conquistas sao feitas em equipe. E estou pronto para entrar na party, aprender com os mais experientes e somar minhas habilidades nessa nova fase da minha carreira.',
 ]
 
 const attributes = [
-  { name: 'Logica', points: 93 },
-  { name: 'UX Sense', points: 89 },
-  { name: 'Codigo Limpo', points: 95 },
-  { name: 'Comunicacao', points: 84 },
+  { name: 'Comunicacao', points: 87 },
+  { name: 'Trabalho em Equipe', points: 89 },
+  { name: 'Resolucao de Problemas', points: 91 },
+  { name: 'Adaptabilidade', points: 86 },
 ]
 
 const skills = [
   {
-    title: 'Component Architecture',
-    tier: 'Tier S',
+    title: 'Componentizacao React',
+    tier: 'Ramo Base',
     description:
-      'Estruturas reutilizaveis com foco em manutencao, escalabilidade e consistencia visual.',
+      'Estruturas reutilizaveis, props tipadas e padrao visual consistente para escalar interfaces.',
   },
   {
-    title: 'Performance Tuning',
-    tier: 'Tier A',
+    title: 'Type Safety e Estado',
+    tier: 'Ramo Intermediario',
     description:
-      'Otimizo renderizacao, bundle e estrategia de carregamento para ganhar velocidade real.',
+      'Modelagem de tipos, fluxo de estados e organizacao de logica para reduzir erros em producao.',
   },
   {
-    title: 'Acessibilidade',
-    tier: 'Tier A',
+    title: 'Integracao Front + Backend',
+    tier: 'Ramo Em Evolucao',
     description:
-      'Interfaces navegaveis por teclado, semantica correta e experiencia inclusiva.',
+      'Consumo de APIs, tratamento de falhas e padronizacao de dados para entregas mais robustas.',
   },
 ]
 
-const quests = [
+const objectives = [
   {
-    title: 'Quest 01 - Landing de Conversao',
-    impact: 'Performance + SEO + lead capture',
+    title: 'Objetivo 01 - Consolidar React + TypeScript',
+    impact: 'Projetos completos com padrao profissional',
     summary:
-      'Projeto focado em metricas de negocio com boas praticas tecnicas e copy orientada a acao.',
-    reward: '+18% conversao',
+      'Finalizar interfaces com estados reais, validacao de formularios e componentes reutilizaveis.',
+    reward: 'XP de arquitetura frontend',
   },
   {
-    title: 'Quest 02 - Dashboard Operacional',
-    impact: 'Produtividade de time interno',
+    title: 'Objetivo 02 - Evoluir no Backend TypeScript',
+    impact: 'Ampliar visao fullstack',
     summary:
-      'Painel responsivo com componentes modulares, filtros inteligentes e visualizacao rapida.',
-    reward: 'Fluxo 2.1x mais rapido',
+      'Construir APIs basicas, autenticacao inicial e integracao limpa com o frontend.',
+    reward: 'XP de integracao e regra de negocio',
   },
   {
-    title: 'Quest 03 - Portfolio UI Revamp',
-    impact: 'Marca pessoal e posicionamento',
+    title: 'Objetivo 03 - Fortalecer base em C#',
+    impact: 'Abrir caminho para stacks corporativas',
     summary:
-      'Reprojeto visual com identidade forte, narrativa de carreira e navegacao objetiva.',
-    reward: 'Mais entrevistas tecnicas',
+      'Praticar fundamentos de orientacao a objetos e pequenas APIs para consolidar logica.',
+    reward: 'XP de backend e carreira',
   },
 ]
 
 const inventory = [
   'React',
   'TypeScript',
-  'JavaScript',
-  'HTML5',
-  'CSS3',
+  'CSS Vanilla',
+  'Node.js',
+  'C#',
+  '.NET Basico',
   'Vite',
   'Git',
+  'GitHub',
   'Figma',
-  'Testing Library',
-  'Lighthouse',
 ]
 
 function App() {
@@ -80,29 +98,36 @@ function App() {
           <p className="kicker">Dev Character Sheet</p>
           <h1>Yago Correa Rodrigues</h1>
           <p className="subtitle">
-            Frontend strategist que transforma requisitos em experiencias
-            digitais rapidas, acessiveis e orientadas a resultado.
+            Portfolio em formato RPG com progresso tecnico, habilidades e
+            objetivos de evolucao como desenvolvedor.
           </p>
         </div>
         <nav className="sheet-nav" aria-label="Navegacao principal">
-          <a href="#status">Status</a>
-          <a href="#skills">Skills</a>
-          <a href="#quests">Quests</a>
-          <a href="#guilda">Guilda</a>
+          <a href="#jogador">Jogador</a>
+          <a href="#skills">Habilidades</a>
+          <a href="#atributos">Atributos</a>
+          <a href="#objetivos">Objetivos</a>
         </nav>
       </header>
 
       <main className="sheet-grid">
-        <aside className="panel panel-profile" id="status">
+        <aside className="panel panel-profile" id="jogador">
+          <div className="panel-title-row">
+            <p className="panel-id">Jogador</p>
+            <h3>About Me</h3>
+          </div>
           <div className="avatar-block" aria-hidden="true">
             <span>YC</span>
           </div>
-          <p className="role">Classe Primaria</p>
-          <h2>Frontend Engineer</h2>
-          <p className="origin">
-            Especialista em interfaces modernas com foco em performance,
-            clareza e impacto em produto.
-          </p>
+          <p className="role">Classe Atual</p>
+          <h2>Desenvolvedor Junior em Formacao</h2>
+          <div className="origin-story">
+            {playerStory.map((paragraph) => (
+              <p key={paragraph} className="origin">
+                {paragraph}
+              </p>
+            ))}
+          </div>
 
           <ul className="stat-grid" aria-label="Status principal">
             {coreStats.map((stat) => (
@@ -112,12 +137,33 @@ function App() {
               </li>
             ))}
           </ul>
+
+          <div className="xp-block" aria-label="Barras de experiencia tecnica">
+            <p className="xp-title">Barras de Experiencia</p>
+            <ul className="xp-list">
+              {experienceBars.map((experience) => (
+                <li key={experience.name}>
+                  <div className="meter-head">
+                    <span>{experience.name}</span>
+                    <strong>Lv. {experience.level}</strong>
+                  </div>
+                  <div className="meter-track" aria-hidden="true">
+                    <span style={{ width: `${experience.points}%` }} />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </aside>
 
-        <section className="panel panel-attrs" aria-label="Atributos base">
+        <section
+          className="panel panel-attrs"
+          id="atributos"
+          aria-label="Atributos soft skills"
+        >
           <div className="panel-title-row">
             <p className="panel-id">Atributos</p>
-            <h3>Base Stats</h3>
+            <h3>Soft Skills</h3>
           </div>
           <ul className="meter-list">
             {attributes.map((attribute) => (
@@ -136,7 +182,7 @@ function App() {
 
         <section className="panel panel-skills" id="skills">
           <div className="panel-title-row">
-            <p className="panel-id">Arvore</p>
+            <p className="panel-id">Habilidades</p>
             <h3>Skill Tree</h3>
           </div>
           <div className="skill-list">
@@ -152,25 +198,25 @@ function App() {
           </div>
         </section>
 
-        <section className="panel panel-quests" id="quests">
+        <section className="panel panel-quests" id="objetivos">
           <div className="panel-title-row">
-            <p className="panel-id">Missoes</p>
-            <h3>Quests Concluidas</h3>
+            <p className="panel-id">Objetivos</p>
+            <h3>Roadmap Atual</h3>
           </div>
           <div className="quest-list">
-            {quests.map((quest) => (
-              <article key={quest.title} className="quest-card">
+            {objectives.map((objective) => (
+              <article key={objective.title} className="quest-card">
                 <div className="quest-head">
-                  <h4>{quest.title}</h4>
-                  <span className="quest-badge">Concluida</span>
+                  <h4>{objective.title}</h4>
+                  <span className="quest-badge">Ativo</span>
                 </div>
-                <p>{quest.summary}</p>
+                <p>{objective.summary}</p>
                 <ul>
                   <li>
-                    Impacto: <strong>{quest.impact}</strong>
+                    Impacto: <strong>{objective.impact}</strong>
                   </li>
                   <li>
-                    Reward: <strong>{quest.reward}</strong>
+                    Recompensa: <strong>{objective.reward}</strong>
                   </li>
                 </ul>
               </article>
@@ -178,7 +224,7 @@ function App() {
           </div>
         </section>
 
-        <section className="panel panel-inventory" aria-label="Inventario">
+        <section className="panel panel-inventory" aria-label="Inventario tecnico">
           <div className="panel-title-row">
             <p className="panel-id">Loadout</p>
             <h3>Inventario Tecnico</h3>
@@ -192,12 +238,12 @@ function App() {
 
         <section className="panel panel-guild" id="guilda">
           <div className="panel-title-row">
-            <p className="panel-id">Guilda</p>
+            <p className="panel-id">Contato</p>
             <h3>Canal de Convocacao</h3>
           </div>
           <p>
-            Aberto para projetos freelance, squads de produto e consultoria em
-            frontend architecture.
+            Aberto para estagio, projetos freelance e oportunidades para
+            evoluir com desafios reais de produto.
           </p>
           <div className="actions">
             <a className="btn btn-primary" href="mailto:seuemail@dominio.com">
