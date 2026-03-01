@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:github": "tsc -b && vite build --mode github",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm run build:github && gh-pages -d dist",
     "git-sync": "git add . && git commit -m \"update\" && git push origin main"
   },
   "dependencies": {
